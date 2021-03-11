@@ -1,11 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Diagnostics;
 using System.Windows.Forms;
 
 namespace ToggleButtonExample
@@ -15,6 +8,8 @@ namespace ToggleButtonExample
         public Form1()
         {
             InitializeComponent();
+            ceLearningToggle1.Click += (s, a) => { Debug.WriteLine($"Значение элемента toggleSwitch: {(s as CeLearningToggle).IsOn.ToString()}"); };
+
             //ceLearningToggle1.OnText = "  "+ "\u2714";
         }
     }

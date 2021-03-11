@@ -18,3 +18,13 @@ D:\Books\Document\Google disk\Work\Programming\C#\Текущие проекты\
 D:\Books\Document\Google disk\Work\Programming\C#\Текущие проекты\1. ControlAnalizing\DataResource\ToggleButtonExample\ToggleButtonExample\ToggleButtonExample\obj\Debug\ToggleButtonExample.csproj.CoreCompileInputs.cache
 D:\Books\Document\Google disk\Work\Programming\C#\Текущие проекты\1. ControlAnalizing\DataResource\ToggleButtonExample\ToggleButtonExample\ToggleButtonExample\obj\Debug\ToggleButtonExample.exe
 D:\Books\Document\Google disk\Work\Programming\C#\Текущие проекты\1. ControlAnalizing\DataResource\ToggleButtonExample\ToggleButtonExample\ToggleButtonExample\obj\Debug\ToggleButtonExample.pdb
+D:\Books\Document\Google disk\Work\Programming\C#\Текущие проекты\1. ControlAnalizing\DataResource\ToggleButtonExample\ToggleButtonExample\bin\Debug\ToggleButtonExample.exe.config
+D:\Books\Document\Google disk\Work\Programming\C#\Текущие проекты\1. ControlAnalizing\DataResource\ToggleButtonExample\ToggleButtonExample\bin\Debug\ToggleButtonExample.exe
+D:\Books\Document\Google disk\Work\Programming\C#\Текущие проекты\1. ControlAnalizing\DataResource\ToggleButtonExample\ToggleButtonExample\bin\Debug\ToggleButtonExample.pdb
+D:\Books\Document\Google disk\Work\Programming\C#\Текущие проекты\1. ControlAnalizing\DataResource\ToggleButtonExample\ToggleButtonExample\obj\Debug\ToggleButtonExample.csprojAssemblyReference.cache
+D:\Books\Document\Google disk\Work\Programming\C#\Текущие проекты\1. ControlAnalizing\DataResource\ToggleButtonExample\ToggleButtonExample\obj\Debug\ToggleButtonExample.Form1.resources
+D:\Books\Document\Google disk\Work\Programming\C#\Текущие проекты\1. ControlAnalizing\DataResource\ToggleButtonExample\ToggleButtonExample\obj\Debug\ToggleButtonExample.Properties.Resources.resources
+D:\Books\Document\Google disk\Work\Programming\C#\Текущие проекты\1. ControlAnalizing\DataResource\ToggleButtonExample\ToggleButtonExample\obj\Debug\ToggleButtonExample.csproj.GenerateResource.cache
+D:\Books\Document\Google disk\Work\Programming\C#\Текущие проекты\1. ControlAnalizing\DataResource\ToggleButtonExample\ToggleButtonExample\obj\Debug\ToggleButtonExample.csproj.CoreCompileInputs.cache
+D:\Books\Document\Google disk\Work\Programming\C#\Текущие проекты\1. ControlAnalizing\DataResource\ToggleButtonExample\ToggleButtonExample\obj\Debug\ToggleButtonExample.exe
+D:\Books\Document\Google disk\Work\Programming\C#\Текущие проекты\1. ControlAnalizing\DataResource\ToggleButtonExample\ToggleButtonExample\obj\Debug\ToggleButtonExample.pdb
