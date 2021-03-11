@@ -37,13 +37,13 @@
             this.ceLearningToggle1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ceLearningToggle1.ForeColor = System.Drawing.Color.White;
             this.ceLearningToggle1.IsOn = true;
-            this.ceLearningToggle1.Location = new System.Drawing.Point(219, 116);
+            this.ceLearningToggle1.Location = new System.Drawing.Point(142, 203);
             this.ceLearningToggle1.Name = "ceLearningToggle1";
             this.ceLearningToggle1.OffColor = System.Drawing.Color.DarkRed;
             this.ceLearningToggle1.OffText = "Off";
             this.ceLearningToggle1.OnColor = System.Drawing.Color.SpringGreen;
             this.ceLearningToggle1.OnText = "On";
-            this.ceLearningToggle1.Size = new System.Drawing.Size(50, 27);
+            this.ceLearningToggle1.Size = new System.Drawing.Size(100, 52);
             this.ceLearningToggle1.TabIndex = 0;
             this.ceLearningToggle1.Text = "ceLearningToggle1";
             this.ceLearningToggle1.TextEnabled = true;

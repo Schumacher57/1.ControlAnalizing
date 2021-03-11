@@ -61,6 +61,8 @@ namespace ToggleButtonExample
             }
         }
 
+
+
         protected override void OnPaint(PaintEventArgs e)
         {
             e.Graphics.SmoothingMode = (SmoothingMode)SmoothingMode.HighQuality;
@@ -87,13 +89,14 @@ namespace ToggleButtonExample
                         num2 = (this.diameter - height) / 2f;
                         e.Graphics.DrawString(this.OffTex, font, b, this.diameter + 2f, num2 + 1f);
                     }
-                    using (SolidBrush brush2 = new SolidBrush("#FFFFFF".FromHex()))
+                    using (SolidBrush brush2 = new SolidBrush("#FFFFFF".FromHex())) // Тут устанавливаем цвет внутреннего квадрата!!!
                     {
-                        e.Graphics.FillEllipse((Brush)brush2, this.circle);
+                        e.Graphics.FillRectangle((Brush)brush2, this.circle);
+                        //e.Graphics.FillEllipse((Brush)brush2, this.circle);
                     }
-                    using (pen = new Pen(Color.LightGray, 1.2f))
+                    using (pen = new Pen(Color.LightGray, 1.2f)) // Тут меняем цвет обвотки внутреннего квадрата!!!
                     {
-                        e.Graphics.DrawEllipse(pen, this.circle);
+                        e.Graphics.DrawRectangle(pen, Rectangle.Round(this.circle));
                     }
                 }
                 else
@@ -112,6 +115,7 @@ namespace ToggleButtonExample
             base.OnPaint(e);
         }
 
+        // Функция при изменении размера контрола
         protected override void OnResize(EventArgs e)
         {
             base.Width = (base.Height - 2) * 2;
@@ -122,6 +126,7 @@ namespace ToggleButtonExample
             base.OnResize(e);
         }
 
+        // Функция которая рисует движение/передвижение кружка
         private void paintTicker_Tick(object sender, EventArgs e)
         {
             float x = this.circle.X;
@@ -155,6 +160,7 @@ namespace ToggleButtonExample
             }
         }
 
+        // Функция добавления текста
         public bool TextEnabled
         {
             get =>
