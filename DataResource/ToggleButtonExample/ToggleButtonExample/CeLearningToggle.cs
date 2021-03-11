@@ -89,7 +89,7 @@ namespace ToggleButtonExample
                         num2 = (this.diameter - height) / 2f;
                         e.Graphics.DrawString(this.OffTex, font, b, this.diameter + 2f, num2 + 1f);
                     }
-                    using (SolidBrush brush2 = new SolidBrush("#FFFFFF".FromHex())) // Тут устанавливаем цвет внутреннего квадрата!!!
+                    using (SolidBrush brush2 = new SolidBrush("#385580".FromHex())) // Тут устанавливаем цвет внутреннего квадрата!!!
                     {
                         e.Graphics.FillRectangle((Brush)brush2, this.circle);
                         //e.Graphics.FillEllipse((Brush)brush2, this.circle);

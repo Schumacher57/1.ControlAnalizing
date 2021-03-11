@@ -43,7 +43,7 @@
             this.ceLearningToggle1.OffText = "Off";
             this.ceLearningToggle1.OnColor = System.Drawing.Color.SpringGreen;
             this.ceLearningToggle1.OnText = "On";
-            this.ceLearningToggle1.Size = new System.Drawing.Size(100, 52);
+            this.ceLearningToggle1.Size = new System.Drawing.Size(178, 91);
             this.ceLearningToggle1.TabIndex = 0;
             this.ceLearningToggle1.Text = "ceLearningToggle1";
             this.ceLearningToggle1.TextEnabled = true;
