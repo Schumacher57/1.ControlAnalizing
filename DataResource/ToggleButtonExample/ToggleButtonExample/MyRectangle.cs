@@ -35,11 +35,10 @@ namespace ToggleButtonExample
             }
             else
             {
-                RectangleF ef = new RectangleF(x, y, 2f * radius, 2f * radius);
-                RectangleF ef2 = new RectangleF((width - (2f * radius)) - 1f, x, 2f * radius, 2f * radius);
-                RectangleF ef3 = new RectangleF(x, (height - (2f * radius)) - 1f, 2f * radius, 2f * radius);
-                RectangleF ef4 = new RectangleF((width - (2f * radius)) - 1f,
-                    (height - (2f * radius)) - 1f, 2f * radius, 2f * radius);
+                RectangleF ef = new RectangleF(x, y, x, y);
+                RectangleF ef2 = new RectangleF((width - (2f * radius * 0)) - 1f, x, 2f * radius, 2f * radius);
+                RectangleF ef3 = new RectangleF(x, (height - (2f * radius * 0)) - 1f, 2f * radius, 2f * radius);
+                RectangleF ef4 = new RectangleF((width - (2f * radius * 0)) - 1f, (height - (2f * radius * 0)) - 1f, 2f * radius, 2f * radius);
 
                 this.grPath.AddArc(ef, 180f, 90f);
                 this.grPath.AddArc(ef2, 270f, 90f);
