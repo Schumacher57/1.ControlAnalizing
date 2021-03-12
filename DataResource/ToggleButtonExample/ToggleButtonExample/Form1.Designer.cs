@@ -28,26 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.ceLearningToggle1 = new ToggleButtonExample.CeLearningToggle();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.ceLearningToggle4 = new ToggleButtonExample.CeLearningToggle();
+            this.ceLearningToggle3 = new ToggleButtonExample.CeLearningToggle();
+            this.ceLearningToggle2 = new ToggleButtonExample.CeLearningToggle();
+            this.ceLearningToggle1 = new ToggleButtonExample.CeLearningToggle();
             this.SuspendLayout();
-            // 
-            // ceLearningToggle1
-            // 
-            this.ceLearningToggle1.BorderColor = System.Drawing.Color.LightGray;
-            this.ceLearningToggle1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ceLearningToggle1.ForeColor = System.Drawing.Color.White;
-            this.ceLearningToggle1.IsOn = true;
-            this.ceLearningToggle1.Location = new System.Drawing.Point(191, 104);
-            this.ceLearningToggle1.Name = "ceLearningToggle1";
-            this.ceLearningToggle1.OffColor = System.Drawing.Color.DarkRed;
-            this.ceLearningToggle1.OffText = "Off";
-            this.ceLearningToggle1.OnColor = System.Drawing.Color.SpringGreen;
-            this.ceLearningToggle1.OnText = "On";
-            this.ceLearningToggle1.Size = new System.Drawing.Size(178, 91);
-            this.ceLearningToggle1.TabIndex = 0;
-            this.ceLearningToggle1.Text = "ceLearningToggle1";
-            this.ceLearningToggle1.TextEnabled = true;
             // 
             // tableLayoutPanel1
             // 
@@ -61,12 +47,83 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(100, 69);
             this.tableLayoutPanel1.TabIndex = 1;
             // 
+            // ceLearningToggle4
+            // 
+            this.ceLearningToggle4.BorderColor = System.Drawing.Color.LightGray;
+            this.ceLearningToggle4.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ceLearningToggle4.ForeColor = System.Drawing.Color.White;
+            this.ceLearningToggle4.IsOn = true;
+            this.ceLearningToggle4.Location = new System.Drawing.Point(191, 182);
+            this.ceLearningToggle4.Name = "ceLearningToggle4";
+            this.ceLearningToggle4.OffColor = System.Drawing.Color.DarkRed;
+            this.ceLearningToggle4.OffText = "Off";
+            this.ceLearningToggle4.OnColor = System.Drawing.Color.SpringGreen;
+            this.ceLearningToggle4.OnText = "On";
+            this.ceLearningToggle4.Size = new System.Drawing.Size(36, 20);
+            this.ceLearningToggle4.TabIndex = 0;
+            this.ceLearningToggle4.Text = "ceLearningToggle1";
+            this.ceLearningToggle4.TextEnabled = true;
+            // 
+            // ceLearningToggle3
+            // 
+            this.ceLearningToggle3.BorderColor = System.Drawing.Color.LightGray;
+            this.ceLearningToggle3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ceLearningToggle3.ForeColor = System.Drawing.Color.White;
+            this.ceLearningToggle3.IsOn = true;
+            this.ceLearningToggle3.Location = new System.Drawing.Point(191, 156);
+            this.ceLearningToggle3.Name = "ceLearningToggle3";
+            this.ceLearningToggle3.OffColor = System.Drawing.Color.DarkRed;
+            this.ceLearningToggle3.OffText = "Off";
+            this.ceLearningToggle3.OnColor = System.Drawing.Color.SpringGreen;
+            this.ceLearningToggle3.OnText = "On";
+            this.ceLearningToggle3.Size = new System.Drawing.Size(36, 20);
+            this.ceLearningToggle3.TabIndex = 0;
+            this.ceLearningToggle3.Text = "ceLearningToggle1";
+            this.ceLearningToggle3.TextEnabled = true;
+            // 
+            // ceLearningToggle2
+            // 
+            this.ceLearningToggle2.BorderColor = System.Drawing.Color.LightGray;
+            this.ceLearningToggle2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ceLearningToggle2.ForeColor = System.Drawing.Color.White;
+            this.ceLearningToggle2.IsOn = true;
+            this.ceLearningToggle2.Location = new System.Drawing.Point(191, 130);
+            this.ceLearningToggle2.Name = "ceLearningToggle2";
+            this.ceLearningToggle2.OffColor = System.Drawing.Color.DarkRed;
+            this.ceLearningToggle2.OffText = "Off";
+            this.ceLearningToggle2.OnColor = System.Drawing.Color.SpringGreen;
+            this.ceLearningToggle2.OnText = "On";
+            this.ceLearningToggle2.Size = new System.Drawing.Size(36, 20);
+            this.ceLearningToggle2.TabIndex = 0;
+            this.ceLearningToggle2.Text = "ceLearningToggle1";
+            this.ceLearningToggle2.TextEnabled = true;
+            // 
+            // ceLearningToggle1
+            // 
+            this.ceLearningToggle1.BorderColor = System.Drawing.Color.LightGray;
+            this.ceLearningToggle1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ceLearningToggle1.ForeColor = System.Drawing.Color.Black;
+            this.ceLearningToggle1.IsOn = true;
+            this.ceLearningToggle1.Location = new System.Drawing.Point(191, 104);
+            this.ceLearningToggle1.Name = "ceLearningToggle1";
+            this.ceLearningToggle1.OffColor = System.Drawing.Color.DarkRed;
+            this.ceLearningToggle1.OffText = "Off";
+            this.ceLearningToggle1.OnColor = System.Drawing.Color.SpringGreen;
+            this.ceLearningToggle1.OnText = "On";
+            this.ceLearningToggle1.Size = new System.Drawing.Size(36, 20);
+            this.ceLearningToggle1.TabIndex = 0;
+            this.ceLearningToggle1.Text = "ceLearningToggle1";
+            this.ceLearningToggle1.TextEnabled = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(670, 456);
             this.Controls.Add(this.tableLayoutPanel1);
+            this.Controls.Add(this.ceLearningToggle4);
+            this.Controls.Add(this.ceLearningToggle3);
+            this.Controls.Add(this.ceLearningToggle2);
             this.Controls.Add(this.ceLearningToggle1);
             this.Name = "Form1";
             this.Text = "Form1";
@@ -78,6 +135,9 @@
 
         private CeLearningToggle ceLearningToggle1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private CeLearningToggle ceLearningToggle2;
+        private CeLearningToggle ceLearningToggle3;
+        private CeLearningToggle ceLearningToggle4;
     }
 }
 

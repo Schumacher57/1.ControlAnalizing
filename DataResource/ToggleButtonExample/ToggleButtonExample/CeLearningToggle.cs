@@ -127,7 +127,7 @@ namespace ToggleButtonExample
         }
 
         // Функция которая рисует движение/передвижение кружка
-        private void paintTicker_Tick(object sender, EventArgs e)
+        public virtual void paintTicker_Tick(object sender, EventArgs e)
         {
             float x = this.circle.X;
             if (this.isON)
@@ -145,6 +145,7 @@ namespace ToggleButtonExample
                     base.Invalidate();
                     this.painTicker.Stop();
                 }
+                this.ForeColor = System.Drawing.Color.Black;
             }
             else if ((x - this.artis) >= 1f)
             {
@@ -156,6 +157,7 @@ namespace ToggleButtonExample
                 x = 1f;
                 this.circle = new RectangleF(x, 1f, this.diameter, this.diameter);
                 base.Invalidate();
+                this.ForeColor = System.Drawing.Color.White;
                 this.painTicker.Stop();
             }
         }

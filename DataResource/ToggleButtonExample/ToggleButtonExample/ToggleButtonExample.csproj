@@ -49,6 +49,9 @@
     <Compile Include="CeLearningToggle.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="ToggleSwitch.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="ExtenssionMethods.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
