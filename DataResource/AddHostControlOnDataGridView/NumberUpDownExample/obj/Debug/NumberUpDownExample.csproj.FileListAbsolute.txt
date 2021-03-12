@@ -1,0 +1,10 @@
+C:\Users\NAEEM SHAH\source\repos\NumberUpDownExample\NumberUpDownExample\bin\Debug\NumberUpDownExample.exe.config
+C:\Users\NAEEM SHAH\source\repos\NumberUpDownExample\NumberUpDownExample\bin\Debug\NumberUpDownExample.exe
+C:\Users\NAEEM SHAH\source\repos\NumberUpDownExample\NumberUpDownExample\bin\Debug\NumberUpDownExample.pdb
+C:\Users\NAEEM SHAH\source\repos\NumberUpDownExample\NumberUpDownExample\obj\Debug\NumberUpDownExample.csprojAssemblyReference.cache
+C:\Users\NAEEM SHAH\source\repos\NumberUpDownExample\NumberUpDownExample\obj\Debug\NumberUpDownExample.Form1.resources
+C:\Users\NAEEM SHAH\source\repos\NumberUpDownExample\NumberUpDownExample\obj\Debug\NumberUpDownExample.Properties.Resources.resources
+C:\Users\NAEEM SHAH\source\repos\NumberUpDownExample\NumberUpDownExample\obj\Debug\NumberUpDownExample.csproj.GenerateResource.cache
+C:\Users\NAEEM SHAH\source\repos\NumberUpDownExample\NumberUpDownExample\obj\Debug\NumberUpDownExample.csproj.CoreCompileInputs.cache
+C:\Users\NAEEM SHAH\source\repos\NumberUpDownExample\NumberUpDownExample\obj\Debug\NumberUpDownExample.exe
+C:\Users\NAEEM SHAH\source\repos\NumberUpDownExample\NumberUpDownExample\obj\Debug\NumberUpDownExample.pdb
