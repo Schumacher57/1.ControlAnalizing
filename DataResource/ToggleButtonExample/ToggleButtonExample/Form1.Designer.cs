@@ -33,6 +33,8 @@
             this.ceLearningToggle3 = new ToggleButtonExample.CeLearningToggle();
             this.ceLearningToggle2 = new ToggleButtonExample.CeLearningToggle();
             this.ceLearningToggle1 = new ToggleButtonExample.CeLearningToggle();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -51,7 +53,7 @@
             // 
             this.ceLearningToggle4.BorderColor = System.Drawing.Color.LightGray;
             this.ceLearningToggle4.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ceLearningToggle4.ForeColor = System.Drawing.Color.White;
+            this.ceLearningToggle4.ForeColor = System.Drawing.Color.Black;
             this.ceLearningToggle4.IsOn = true;
             this.ceLearningToggle4.Location = new System.Drawing.Point(191, 182);
             this.ceLearningToggle4.Name = "ceLearningToggle4";
@@ -68,7 +70,7 @@
             // 
             this.ceLearningToggle3.BorderColor = System.Drawing.Color.LightGray;
             this.ceLearningToggle3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ceLearningToggle3.ForeColor = System.Drawing.Color.White;
+            this.ceLearningToggle3.ForeColor = System.Drawing.Color.Black;
             this.ceLearningToggle3.IsOn = true;
             this.ceLearningToggle3.Location = new System.Drawing.Point(191, 156);
             this.ceLearningToggle3.Name = "ceLearningToggle3";
@@ -85,7 +87,7 @@
             // 
             this.ceLearningToggle2.BorderColor = System.Drawing.Color.LightGray;
             this.ceLearningToggle2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ceLearningToggle2.ForeColor = System.Drawing.Color.White;
+            this.ceLearningToggle2.ForeColor = System.Drawing.Color.Black;
             this.ceLearningToggle2.IsOn = true;
             this.ceLearningToggle2.Location = new System.Drawing.Point(191, 130);
             this.ceLearningToggle2.Name = "ceLearningToggle2";
@@ -115,11 +117,20 @@
             this.ceLearningToggle1.Text = "ceLearningToggle1";
             this.ceLearningToggle1.TextEnabled = true;
             // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(299, 81);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(240, 150);
+            this.dataGridView1.TabIndex = 2;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(670, 456);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.ceLearningToggle4);
             this.Controls.Add(this.ceLearningToggle3);
@@ -127,6 +138,7 @@
             this.Controls.Add(this.ceLearningToggle1);
             this.Name = "Form1";
             this.Text = "Form1";
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -138,6 +150,7 @@
         private CeLearningToggle ceLearningToggle2;
         private CeLearningToggle ceLearningToggle3;
         private CeLearningToggle ceLearningToggle4;
+        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }
 

@@ -16,9 +16,28 @@ namespace ToggleButtonExample
             //mySwitch.Dock = DockStyle.Fill;
             //mySwitch.OnColor = System.Drawing.Color.Green;
             //mySwitch.OffColor = System.Drawing.Color.Red;
+
             tableLayoutPanel1.Controls.Add(mySwitch, 0, 0);
+            dataGridView1.DataError += (s, a) => { a.Cancel = false; };
+            updateDataGridView(dataGridView1);
 
             //ceLearningToggle1.OnText = "  "+ "\u2714";
         }
+
+
+        private void updateDataGridView(DataGridView dataGrid)
+        {
+            var myColumn = new DataGridViewToggleSwitchColumn();
+            //myColumn.HeaderText = "Заголовок";
+            //myColumn
+            //myColumn.
+
+
+            dataGrid.Columns.Add(myColumn);
+            dataGridView1.RowCount = 4;
+
+
+        }
+
     }
 }
