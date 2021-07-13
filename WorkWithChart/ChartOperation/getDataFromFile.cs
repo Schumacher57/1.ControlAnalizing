@@ -15,6 +15,7 @@ namespace WorkWithChart.ChartOperation
             mainChart.Series[0].Points.Clear();
             myFile.AddrFile = @"d:\Books\Document\Google disk\Work\Programming\C#\Текущие проекты\1. ControlAnalizing\DataResource\Measure\";
             myFile.FileName = "+ data_30-6000_El.txt";
+            //myFile.FileName = "TestData.txt";
             measure1 = myFile.ReadFile();
             mainChart.Series[0].Points.DataBindXY(measure1.DTFreq.ToArray(), measure1.DTSig.ToArray());
             //mainChart.ChartAreas[0].AxisX.Minimum = measure1.DTFreq[0];
@@ -22,8 +23,8 @@ namespace WorkWithChart.ChartOperation
 
 
 
-            mainChart.ChartAreas[0].AxisX.Minimum = measure1.DTFreq[0] - 25;
-            mainChart.ChartAreas[0].AxisX.Maximum = measure1.DTFreq.Max() + 50;
+            mainChart.ChartAreas[0].AxisX.Minimum = measure1.DTFreq[0] - 2;
+            mainChart.ChartAreas[0].AxisX.Maximum = measure1.DTFreq.Max() + 2;
             mainChart.ChartAreas[0].AxisY.Minimum = measure1.DTSig.Min() - 2;
             Debug.WriteLine(measure1.DTSig.Min().ToString());
 

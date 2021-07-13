@@ -9,7 +9,7 @@ namespace WorkWithChart.MyControl
     class mainChart : Chart
     {
         private long numberOfZoom = 0;
-        private const float CZoomScale = 4f;
+        private const float CZoomScale = 1f;
         private int FZoomLevel = 0;
 
 
@@ -69,20 +69,24 @@ namespace WorkWithChart.MyControl
             // Настройка шага интервала
             tmpChrtArea.AxisX.Interval = 350;
             tmpChrtArea.AxisY.Interval = 1;
+            //tmpChrtArea.AxisX.Interval = 2;
+            //tmpChrtArea.AxisY.Interval = 2;
+
 
             // Настройка подписей оси X
             tmpChrtArea.AxisX.LabelAutoFitStyle = LabelAutoFitStyles.DecreaseFont;  // Добавляем возможность уменьшения текста
             //tmpChrtArea.AxisX.LabelAutoFitStyle = LabelAutoFitStyles.LabelsAngleStep45; // Поворот подписей
             tmpChrtArea.AxisX.LabelStyle.ForeColor = System.Drawing.Color.FromArgb(255, 255, 255);
             tmpChrtArea.AxisX.LabelStyle.Font = new System.Drawing.Font("Arial", 12f, System.Drawing.FontStyle.Bold);
-            tmpChrtArea.AxisX.LabelStyle.Format = "{0.000}";
+            tmpChrtArea.AxisX.LabelStyle.Format = "{0.0}";
 
             // Настройка подписей оси Y
             tmpChrtArea.AxisY.LabelAutoFitStyle = LabelAutoFitStyles.DecreaseFont;  // Добавляем возможность уменьшения текста
+            //tmpChrtArea.AxisY.LabelAutoFitStyle = LabelAutoFitStyles.None;
             tmpChrtArea.AxisY.LabelStyle.ForeColor = System.Drawing.Color.DarkRed;
             tmpChrtArea.AxisY.LabelAutoFitStyle = LabelAutoFitStyles.DecreaseFont;
-            tmpChrtArea.AxisY.LabelStyle.Font = new System.Drawing.Font("Arial", 54f);//, System.Drawing.FontStyle.Bold);
-            tmpChrtArea.AxisY.LabelStyle.Format = "{0.00 дБ}";
+            tmpChrtArea.AxisY.LabelStyle.Font = new System.Drawing.Font("Arial", 8f, System.Drawing.FontStyle.Bold);//, System.Drawing.FontStyle.Bold);
+            tmpChrtArea.AxisY.LabelStyle.Format = "{0.000 дБ}";
 
 
             //Велючаем зумирование
@@ -125,8 +129,62 @@ namespace WorkWithChart.MyControl
         //Добавляем zoom
         private void MainChart_MouseWheel(object sender, System.Windows.Forms.MouseEventArgs e)
         {
+            Double percentStep = 0.2; // Значение должно быть от 0.01 до 0
+            Axis xAxis = (sender as Chart).ChartAreas[0].AxisX;
+            //Axis yAxis = (sender as Chart).ChartAreas[0].AxisY;
+
+            Debug.WriteLine($"Мышь в пикселях: {e.Location.X}");
+            Debug.WriteLine($"Мышь в значениях: {Math.Round(xAxis.PixelPositionToValue(e.Location.X), 2)}");
+            Debug.WriteLine($"Начало графика: {Math.Round(xAxis.ScaleView.ViewMinimum, 2)}");
+
+            Double mousePos1 = xAxis.PixelPositionToValue(e.Location.X);
 
 
+
+
+
+
+            Double xMosePos = xAxis.PixelPositionToValue(e.Location.X);
+            Double xMax = xAxis.ScaleView.ViewMaximum;
+            Double xMin = xAxis.ScaleView.ViewMinimum;
+            Double xStep = ((xMax - xMin) * percentStep) / 2;
+
+            //Double stepY;
+
+            // Задём xMin
+            if (e.Delta > 0)
+            {
+
+                //Debug.WriteLine($"Позиция мыши {Math.Round(xMosePos, 3)}. \t xMin: {Math.Round(xMin, 2)}\t xMax: {Math.Round(xMax, 2)}");
+                //Debug.WriteLine($"xMax - xMin: {Math.Round(xMax - xMin, 2)}");
+                //Debug.WriteLine($"Результат вычисления: {Math.Round(xMosePos - (xMax - xMin), 2)} \n");
+
+                if (xMosePos - ((xMax - xMin) / 2) > xMin)
+                {
+                    Debug.WriteLine("зашёл");
+                    xAxis.ScaleView.Zoom(xMin + xStep, xMax);
+                    xMin = xAxis.ScaleView.ViewMinimum;
+                }
+                if (xMosePos + ((xMax - xMin) / 2) < xMax)
+                {
+                    xAxis.ScaleView.Zoom(xMin, xMax - xStep);
+                    xMax = xAxis.ScaleView.ViewMaximum;
+                }
+                //xAxis.ScaleView.Position = (xMax - xMin) / 2;
+            }
+            else if (e.Delta < 0)
+            {
+                xAxis.ScaleView.ZoomReset();
+            }
+            Double mousePos2 = xAxis.PixelPositionToValue(e.Location.X);
+            Debug.WriteLine($"Позиц2: {Math.Round(mousePos2, 2)}");
+            Debug.WriteLine($"Разница поз2 - поз1: {Math.Round(mousePos2 - mousePos1, 2)} \n");
+            xAxis.ScaleView.Position = xMin + Math.Abs(mousePos2 - mousePos1);
+
+
+
+
+            /* // Рабочий пример зума
             Axis xAxis = (sender as Chart).ChartAreas[0].AxisX;
             Axis yAxis = (sender as Chart).ChartAreas[0].AxisY;
             double xMin = xAxis.ScaleView.ViewMinimum;
@@ -142,12 +200,17 @@ namespace WorkWithChart.MyControl
                     {
                         FZoomLevel = 0;
                         xAxis.ScaleView.ZoomReset();
+                        //xAxis.Interval = 350;
+                        //yAxis.Interval = 1;
                     }
                     else
                     {
                         double xStartPos = Math.Max(xPixelPos - (xPixelPos - xMin) * CZoomScale, 0);
                         double xEndPos = Math.Min(xStartPos + (xMax - xMin) * CZoomScale, xAxis.Maximum);
                         xAxis.ScaleView.Zoom(xStartPos, xEndPos);
+
+                        //xAxis.Interval = xAxis.Interval * CZoomScale;
+                        //yAxis.Interval = yAxis.Interval * 1.0001;
                     }
                 }
                 else if (e.Delta > 0)
@@ -157,22 +220,14 @@ namespace WorkWithChart.MyControl
                     double xEndPos = Math.Min(xStartPos + (xMax - xMin) / CZoomScale, xAxis.Maximum);
                     xAxis.ScaleView.Zoom(xStartPos, xEndPos);
                     FZoomLevel++;
+                    //xAxis.Interval = xAxis.Interval / CZoomScale;
+                    //yAxis.Interval = yAxis.Interval / 1.0001;
                 }
             }
-            catch { }
+            catch { }*/
 
-            // Настройка интервала графика
-            if (e.Delta > 0)
-            {
-                xAxis.Interval = xAxis.Interval / 4;
-                yAxis.Interval = yAxis.Interval / 1.1;
-            }
-            else
-            {
-                xAxis.Interval = xAxis.Interval * 4;
-                yAxis.Interval = yAxis.Interval * 1.1;
-            }
-            Debug.WriteLine("Прокрутил на " + e.Delta);
+
+            //Debug.WriteLine("Прокрутил на " + e.Delta);
 
 
 
