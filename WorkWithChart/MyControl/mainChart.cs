@@ -8,10 +8,11 @@ namespace WorkWithChart.MyControl
 {
     class mainChart : Chart
     {
-        private long numberOfZoom = 0;
-        private const float CZoomScale = 1f;
-        private int FZoomLevel = 0;
 
+        TextWriterTraceListener report = new TextWriterTraceListener(System.IO.File.CreateText(@"d:\Books\Document\Google disk\Work\Programming\C#\Текущие проекты\1. ControlAnalizing\DataResource\Measure\report2.txt"));
+        private int iCounter = 1;
+        double percentStep = 0.4; // Значение должно быть от 0.01 до 1. Задаёт шаг скролла зума
+        private bool mouseOnChart = true;   // Показывает находится ли мышь на графике или нет. (Для зума)
 
         //Настройка Series
         private Series confSeries()
@@ -36,10 +37,16 @@ namespace WorkWithChart.MyControl
             ChartArea tmpChrtArea = new ChartArea();
 
             // Настройка расположения на графике основных данных
-            tmpChrtArea.Position.Y = 1;
-            tmpChrtArea.Position.Height = 99;
-            tmpChrtArea.Position.X = 0;
-            tmpChrtArea.Position.Width = 99.5f;
+
+            tmpChrtArea.Position.Y = 0;
+            tmpChrtArea.Position.Height = 100f;
+            tmpChrtArea.Position.X = 1;
+            tmpChrtArea.Position.Width = 100f;
+            tmpChrtArea.InnerPlotPosition.X = 4;
+            tmpChrtArea.InnerPlotPosition.Width = 96f;
+            tmpChrtArea.InnerPlotPosition.Y = 0;
+            tmpChrtArea.InnerPlotPosition.Height = 91.5f;
+
 
             // Настраиваем вспомогательные линии
             tmpChrtArea.AxisX.MajorGrid.Enabled = true;
@@ -67,26 +74,34 @@ namespace WorkWithChart.MyControl
             tmpChrtArea.AxisY.MinorGrid.LineDashStyle = ChartDashStyle.Dash;
 
             // Настройка шага интервала
-            tmpChrtArea.AxisX.Interval = 350;
-            tmpChrtArea.AxisY.Interval = 1;
-            //tmpChrtArea.AxisX.Interval = 2;
-            //tmpChrtArea.AxisY.Interval = 2;
+            /*tmpChrtArea.AxisX.Interval = 350;
+            tmpChrtArea.AxisY.Interval = 1;*/
+
+            /*tmpChrtArea.AxisX.Interval = 2;
+            tmpChrtArea.AxisY.Interval = 2;*/
+
+            /*tmpChrtArea.AxisX.Interval = 2.5;
+            tmpChrtArea.AxisY.Interval = 2.5;*/
 
 
             // Настройка подписей оси X
             tmpChrtArea.AxisX.LabelAutoFitStyle = LabelAutoFitStyles.DecreaseFont;  // Добавляем возможность уменьшения текста
+            tmpChrtArea.AxisX.IsLabelAutoFit = false;
+            //tmpChrtArea.AxisY.Crossing = 17;
             //tmpChrtArea.AxisX.LabelAutoFitStyle = LabelAutoFitStyles.LabelsAngleStep45; // Поворот подписей
             tmpChrtArea.AxisX.LabelStyle.ForeColor = System.Drawing.Color.FromArgb(255, 255, 255);
-            tmpChrtArea.AxisX.LabelStyle.Font = new System.Drawing.Font("Arial", 12f, System.Drawing.FontStyle.Bold);
-            tmpChrtArea.AxisX.LabelStyle.Format = "{0.0}";
+            tmpChrtArea.AxisX.LabelStyle.Font = new System.Drawing.Font("Arial", 9f, System.Drawing.FontStyle.Bold);
+            tmpChrtArea.AxisX.LabelStyle.Format = "{0}";
 
             // Настройка подписей оси Y
             tmpChrtArea.AxisY.LabelAutoFitStyle = LabelAutoFitStyles.DecreaseFont;  // Добавляем возможность уменьшения текста
             //tmpChrtArea.AxisY.LabelAutoFitStyle = LabelAutoFitStyles.None;
+            tmpChrtArea.AxisX.IsLabelAutoFit = false;
+            tmpChrtArea.AxisX.Crossing = 8;
             tmpChrtArea.AxisY.LabelStyle.ForeColor = System.Drawing.Color.DarkRed;
             tmpChrtArea.AxisY.LabelAutoFitStyle = LabelAutoFitStyles.DecreaseFont;
-            tmpChrtArea.AxisY.LabelStyle.Font = new System.Drawing.Font("Arial", 8f, System.Drawing.FontStyle.Bold);//, System.Drawing.FontStyle.Bold);
-            tmpChrtArea.AxisY.LabelStyle.Format = "{0.000 дБ}";
+            tmpChrtArea.AxisY.LabelStyle.Font = new System.Drawing.Font("Arial", 9f, System.Drawing.FontStyle.Bold);//, System.Drawing.FontStyle.Bold);
+            tmpChrtArea.AxisY.LabelStyle.Format = "{0 дБ}";
 
 
             //Велючаем зумирование
@@ -96,6 +111,7 @@ namespace WorkWithChart.MyControl
             return tmpChrtArea;
         }
 
+        // Настройка основного Графика
         public mainChart()
         {
             this.Name = "mainChart";
@@ -122,218 +138,147 @@ namespace WorkWithChart.MyControl
             this.ChartAreas[0].BackColor = System.Drawing.Color.FromArgb(0, 0, 0);
             //this.ChartAreas[0].AxisX.ScaleView.Zoomable = true;
             this.MouseWheel += MainChart_MouseWheel;    // Добавляем возможность скролла графика
-
+            this.MouseEnter += (s, a) => { mouseOnChart = true; };
+            this.MouseLeave += (s, a) => { mouseOnChart = false; };
             this.Series.Add(confSeries());  // Добавляем данные для графиа
         }
 
-        //Добавляем zoom
+        // Метод обработки события Zoom (MouseWheel)
         private void MainChart_MouseWheel(object sender, System.Windows.Forms.MouseEventArgs e)
         {
-            Double percentStep = 0.2; // Значение должно быть от 0.01 до 0
-            Axis xAxis = (sender as Chart).ChartAreas[0].AxisX;
-            //Axis yAxis = (sender as Chart).ChartAreas[0].AxisY;
-
-            Debug.WriteLine($"Мышь в пикселях: {e.Location.X}");
-            Debug.WriteLine($"Мышь в значениях: {Math.Round(xAxis.PixelPositionToValue(e.Location.X), 2)}");
-            Debug.WriteLine($"Начало графика: {Math.Round(xAxis.ScaleView.ViewMinimum, 2)}");
-
-            Double mousePos1 = xAxis.PixelPositionToValue(e.Location.X);
-
-
-
-
-
-
-            Double xMosePos = xAxis.PixelPositionToValue(e.Location.X);
-            Double xMax = xAxis.ScaleView.ViewMaximum;
-            Double xMin = xAxis.ScaleView.ViewMinimum;
-            Double xStep = ((xMax - xMin) * percentStep) / 2;
-
-            //Double stepY;
-
-            // Задём xMin
-            if (e.Delta > 0)
-            {
-
-                //Debug.WriteLine($"Позиция мыши {Math.Round(xMosePos, 3)}. \t xMin: {Math.Round(xMin, 2)}\t xMax: {Math.Round(xMax, 2)}");
-                //Debug.WriteLine($"xMax - xMin: {Math.Round(xMax - xMin, 2)}");
-                //Debug.WriteLine($"Результат вычисления: {Math.Round(xMosePos - (xMax - xMin), 2)} \n");
-
-                if (xMosePos - ((xMax - xMin) / 2) > xMin)
-                {
-                    Debug.WriteLine("зашёл");
-                    xAxis.ScaleView.Zoom(xMin + xStep, xMax);
-                    xMin = xAxis.ScaleView.ViewMinimum;
-                }
-                if (xMosePos + ((xMax - xMin) / 2) < xMax)
-                {
-                    xAxis.ScaleView.Zoom(xMin, xMax - xStep);
-                    xMax = xAxis.ScaleView.ViewMaximum;
-                }
-                //xAxis.ScaleView.Position = (xMax - xMin) / 2;
-            }
-            else if (e.Delta < 0)
-            {
-                xAxis.ScaleView.ZoomReset();
-            }
-            Double mousePos2 = xAxis.PixelPositionToValue(e.Location.X);
-            Debug.WriteLine($"Позиц2: {Math.Round(mousePos2, 2)}");
-            Debug.WriteLine($"Разница поз2 - поз1: {Math.Round(mousePos2 - mousePos1, 2)} \n");
-            xAxis.ScaleView.Position = xMin + Math.Abs(mousePos2 - mousePos1);
-
-
-
-
-            /* // Рабочий пример зума
+            // Получаем оси графика
             Axis xAxis = (sender as Chart).ChartAreas[0].AxisX;
             Axis yAxis = (sender as Chart).ChartAreas[0].AxisY;
-            double xMin = xAxis.ScaleView.ViewMinimum;
-            double xMax = xAxis.ScaleView.ViewMaximum;
-            double xPixelPos = xAxis.PixelPositionToValue(e.Location.X);
 
             try
             {
-                if (e.Delta < 0 && FZoomLevel > 0)
+                if (mouseOnChart == true) // Проверяем находится ли мышь на форме Chart (
                 {
-                    // Scrolled down, meaning zoom out
-                    if (--FZoomLevel <= 0)
+                    // Вводоим необходиммые начальные данные
+                    // Данные для оси X
+                    double xMousePos = xAxis.PixelPositionToValue(e.Location.X);
+                    double xMax = xAxis.ScaleView.ViewMaximum;
+                    double xMin = xAxis.ScaleView.ViewMinimum;
+                    double xStep = ((xMax - xMin) * percentStep) / 2;
+                    // Данные для оси Y
+                    double yMousePos = yAxis.PixelPositionToValue(e.Location.Y);
+                    double yMax = yAxis.ScaleView.ViewMaximum;
+                    double yMin = yAxis.ScaleView.ViewMinimum;
+                    double yStep = ((yMax - yMin) * percentStep) / 2;
+
+                    /*——————Увеличение——————*/
+                    if (e.Delta > 0)
                     {
-                        FZoomLevel = 0;
+                        // Увеличение по оси X (абсцисса)
+
+                        // Если мышь в правой половине стороны графика
+                        if (xMousePos - ((xMax - xMin) / 2) > xMin)
+                        {
+                            
+                            double tmpVal = xAxis.PixelPositionToValue(e.Location.X);
+                            double tmpXmin = xMin + Math.Abs(xStep); // Вот тут главная засада <-------------  !!!!!!!!!!!
+
+                            /*report.WriteLine($"{iCounter}—————————————————————————————————————————— Правая\n");
+                            report.WriteLine("ДО Шага:");
+                            report.WriteLine($"xMin\t{xMin}");
+                            report.WriteLine($"SetMousePosToval({e.Location.X})\t{Math.Round(xAxis.PixelPositionToValue(e.Location.X), 2)}");
+                            report.WriteLine($"tmpVal:\t{tmpVal}");*/
+
+                            // Начинем какие-либо вычисления
+                            //Debug.WriteLine(percentStep);
+                            xAxis.ScaleView.Zoom(xMin + xStep, xMax);
+                            //xAxis.ScaleView.Zoom(xMin + 10, xMax);
+                            //(sender as Chart).Refresh();
+
+                            xMax = xAxis.ScaleView.ViewMaximum;
+
+                            /*report.WriteLine($"\nxMin(до движения):\t{xMin}");
+                            report.WriteLine($"tmpXmin до движения:\t{tmpXmin}");
+                            report.WriteLine($"tmpVal до движения:\t{Math.Round(tmpVal, 2)}");*/
+
+                            xAxis.ScaleView.Position = tmpXmin - (Math.Abs(tmpVal - xAxis.PixelPositionToValue(e.Location.X)));
+
+
+
+
+
+                            /*report.WriteLine("\nПОСЛЕ ШАГА:");
+                            report.WriteLine($"\nxMin(после движения):\t{xMin}");
+                            report.WriteLine($"tmpXmin после движения:\t{tmpXmin}");
+                            report.WriteLine($"tmpVal после движения:\t{tmpVal}");
+                            report.WriteLine($"curVal({e.Location.X})\t{xAxis.PixelPositionToValue(e.Location.X)}");
+                            report.WriteLine($"tmpVal-Curval:\t{tmpVal - xAxis.PixelPositionToValue(e.Location.X)}");
+                            report.WriteLine($"xMin - (tmpVal - CurVal)\t{xMin - (Math.Abs(tmpVal - xAxis.PixelPositionToValue(e.Location.X)))}");*/
+
+                        }
+                        // Если мышь в левой половине стороны графика
+                        if (xMousePos + ((xMax - xMin) / 2) < xMax)
+                        {
+                            report.WriteLine($"{iCounter}——————————————————————————————————————————\n");
+                            report.WriteLine("ДО:");
+                            report.WriteLine($"{Math.Round((double)e.Location.X, 2)}px в Vals:\t{Math.Round(xAxis.PixelPositionToValue(e.Location.X), 2)}");
+                            report.WriteLine($"xMin:\t{Math.Round(xMin, 2)}");
+
+                            double tmpValFromPos = xAxis.PixelPositionToValue(e.Location.X);
+
+                            xAxis.ScaleView.Zoom(xMin, xMax - xStep);
+                            //(sender as Chart).Refresh();
+                            xAxis.ScaleView.Position = xMin + Math.Abs(xAxis.PixelPositionToValue(e.Location.X) - tmpValFromPos);
+
+                            report.WriteLine("\nПОСЛЕ:");
+                            report.WriteLine($"{Math.Round((double)e.Location.X, 2)}px в Vals:\t{Math.Round(xAxis.PixelPositionToValue(e.Location.X), 2)}");
+                            report.WriteLine($"xMin:\t{Math.Round(xMin, 2)}");
+                        }
+
+                        // Увеличение по оси Y (ордината)
+
+                        // Если мышь в верхней половине графика
+                        if (yMousePos - ((yMax - yMin) / 2) > yMin)
+                        {
+                            double tmpVal = yAxis.PixelPositionToValue(e.Location.Y);
+                            double tmpYmin = yMin + Math.Abs(yStep); // Вот тут главная засада <-------------  
+
+                            // Начинем какие-либо вычисления
+                            yAxis.ScaleView.Zoom(yMin + yStep, yMax);
+                            yMax = yAxis.ScaleView.ViewMaximum;
+                            yAxis.ScaleView.Position = tmpYmin - (Math.Abs(tmpVal - yAxis.PixelPositionToValue(e.Location.Y)));
+
+                        }
+                        // Если мышь в нижней половине графика
+                        if (yMousePos + ((yMax - yMin) / 2) < yMax)
+                        {
+                            double tmpValFromPos = yAxis.PixelPositionToValue(e.Location.Y);
+
+                            yAxis.ScaleView.Zoom(yMin, yMax - yStep);
+                            //(sender as Chart).Refresh();
+                            yAxis.ScaleView.Position = yMin + Math.Abs(yAxis.PixelPositionToValue(e.Location.Y) - tmpValFromPos);
+                        }
+
+                    }
+
+                    /*——————Отдаление——————*/
+                    else if (e.Delta < 0)
+                    {
                         xAxis.ScaleView.ZoomReset();
-                        //xAxis.Interval = 350;
-                        //yAxis.Interval = 1;
+                        yAxis.ScaleView.ZoomReset();
                     }
-                    else
-                    {
-                        double xStartPos = Math.Max(xPixelPos - (xPixelPos - xMin) * CZoomScale, 0);
-                        double xEndPos = Math.Min(xStartPos + (xMax - xMin) * CZoomScale, xAxis.Maximum);
-                        xAxis.ScaleView.Zoom(xStartPos, xEndPos);
 
-                        //xAxis.Interval = xAxis.Interval * CZoomScale;
-                        //yAxis.Interval = yAxis.Interval * 1.0001;
-                    }
-                }
-                else if (e.Delta > 0)
-                {
-                    // Scrolled up, meaning zoom in
-                    double xStartPos = Math.Max(xPixelPos - (xPixelPos - xMin) / CZoomScale, 0);
-                    double xEndPos = Math.Min(xStartPos + (xMax - xMin) / CZoomScale, xAxis.Maximum);
-                    xAxis.ScaleView.Zoom(xStartPos, xEndPos);
-                    FZoomLevel++;
-                    //xAxis.Interval = xAxis.Interval / CZoomScale;
-                    //yAxis.Interval = yAxis.Interval / 1.0001;
-                }
+
+
+
+                    report.WriteLine("");
+                    ++iCounter;
+                    report.Flush();
+
+                } // Конец провери нахождения мыши на Chart
             }
-            catch { }*/
+            catch
+            {
+                xAxis.ScaleView.ZoomReset();
+                return;
+            }
 
 
-            //Debug.WriteLine("Прокрутил на " + e.Delta);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            // _____________________________________________________________________
-            //var chart = (Chart)sender;
-            //var xAxis = chart.ChartAreas[0].AxisX;
-            //var yAxis = chart.ChartAreas[0].AxisY;
-
-            //var xMin = xAxis.ScaleView.ViewMinimum;
-            //var xMax = xAxis.ScaleView.ViewMaximum;
-            //var yMin = yAxis.ScaleView.ViewMinimum;
-            //var yMax = yAxis.ScaleView.ViewMaximum;
-
-            //int IntervalX = 3;
-            //int IntervalY = 3;
-            //try
-            //{
-            //    if (e.Delta < 0 && numberOfZoom > 0) // Scrolled down.
-            //    {
-            //        var posXStart = xAxis.PixelPositionToValue(e.Location.X) - IntervalX * 2 / Math.Pow(2, numberOfZoom);
-            //        var posXFinish = xAxis.PixelPositionToValue(e.Location.X) + IntervalX * 2 / Math.Pow(2, numberOfZoom);
-            //        var posYStart = yAxis.PixelPositionToValue(e.Location.Y) - IntervalY * 2 / Math.Pow(2, numberOfZoom);
-            //        var posYFinish = yAxis.PixelPositionToValue(e.Location.Y) + IntervalY * 2 / Math.Pow(2, numberOfZoom);
-
-            //        if (posXStart < 0) posXStart = 0;
-            //        if (posYStart < 0) posYStart = 0;
-            //        if (posYFinish > yAxis.Maximum) posYFinish = yAxis.Maximum;
-            //        if (posXFinish > xAxis.Maximum) posYFinish = xAxis.Maximum;
-            //        xAxis.ScaleView.Zoom(posXStart, posXFinish);
-            //        yAxis.ScaleView.Zoom(posYStart, posYFinish);
-            //        numberOfZoom--;
-            //    }
-            //    else if (e.Delta < 0 && numberOfZoom == 0) //Last scrolled dowm
-            //    {
-            //        yAxis.ScaleView.ZoomReset();
-            //        xAxis.ScaleView.ZoomReset();
-            //    }
-            //    else if (e.Delta > 0) // Scrolled up.
-            //    {
-
-            //        var posXStart = xAxis.PixelPositionToValue(e.Location.X) - IntervalX / Math.Pow(2, numberOfZoom);
-            //        var posXFinish = xAxis.PixelPositionToValue(e.Location.X) + IntervalX / Math.Pow(2, numberOfZoom);
-            //        var posYStart = yAxis.PixelPositionToValue(e.Location.Y) - IntervalY / Math.Pow(2, numberOfZoom);
-            //        var posYFinish = yAxis.PixelPositionToValue(e.Location.Y) + IntervalY / Math.Pow(2, numberOfZoom);
-
-            //        xAxis.ScaleView.Zoom(posXStart, posXFinish);
-            //        yAxis.ScaleView.Zoom(posYStart, posYFinish);
-            //        numberOfZoom++;
-            //    }
-
-            //    if (numberOfZoom < 0) numberOfZoom = 0;
-            //}
-            //catch { }
-
-
-
-
-
-            // _______________________
-
-
-            //var chart = (Chart)sender;
-            //var xAxis = chart.ChartAreas[0].AxisX;
-            //var yAxis = chart.ChartAreas[0].AxisY;
-
-            //try
-            //{
-            //    if (e.Delta < 0) // Scrolled down.
-            //    {
-            //        xAxis.ScaleView.ZoomReset();
-            //        yAxis.ScaleView.ZoomReset();
-            //        xAxis.Interval = 350;
-            //        yAxis.Interval = 1;
-            //    }
-            //    else if (e.Delta > 0) // Scrolled up.
-            //    {
-            //        var xMin = xAxis.ScaleView.ViewMinimum;
-            //        var xMax = xAxis.ScaleView.ViewMaximum;
-            //        var yMin = yAxis.ScaleView.ViewMinimum;
-            //        var yMax = yAxis.ScaleView.ViewMaximum;
-
-            //        var posXStart = xAxis.PixelPositionToValue(e.Location.X) - (xMax - xMin) / 4;
-            //        var posXFinish = xAxis.PixelPositionToValue(e.Location.X) + (xMax - xMin) / 4;
-            //        var posYStart = yAxis.PixelPositionToValue(e.Location.Y) - (yMax - yMin) / 4;
-            //        var posYFinish = yAxis.PixelPositionToValue(e.Location.Y) + (yMax - yMin) / 4;
-
-            //        xAxis.ScaleView.Zoom(posXStart, posXFinish);
-            //        yAxis.ScaleView.Zoom(posYStart, posYFinish);
-            //        xAxis.Interval = xAxis.Interval / 2;
-            //        yAxis.Interval = yAxis.Interval / 2;
-            //    }
-            //}
-            //catch { }
-            // throw new System.NotImplementedException();
         }
     }
 }
