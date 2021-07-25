@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Windows.Forms.DataVisualization.Charting;
 
 namespace WorkWithChart.ChartOperation
 {
@@ -24,6 +25,12 @@ namespace WorkWithChart.ChartOperation
             DTFreq.Add(freq);
             DTSig.Add(sig);
             DTNoise.Add(noise);
+        }
+
+        public void del()
+        {
+            Chart myChart = new Chart();
+            myChart.Series[4] = new Series();
         }
 
     }

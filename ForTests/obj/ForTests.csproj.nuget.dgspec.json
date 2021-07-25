@@ -18,16 +18,20 @@
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "netcoreapp3.1"
+          "net5.0"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "netcoreapp3.1": {
-            "targetAlias": "netcoreapp3.1",
-            "projectReferences": {}
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "D:\\Books\\Document\\Google disk\\Work\\Programming\\C#\\Текущие проекты\\1. ControlAnalizing\\WorkWithChart\\WorkWithChart.csproj": {
+                "projectPath": "D:\\Books\\Document\\Google disk\\Work\\Programming\\C#\\Текущие проекты\\1. ControlAnalizing\\WorkWithChart\\WorkWithChart.csproj"
+              }
+            }
           }
         },
         "warningProperties": {
@@ -37,8 +41,8 @@
         }
       },
       "frameworks": {
-        "netcoreapp3.1": {
-          "targetAlias": "netcoreapp3.1",
+        "net5.0": {
+          "targetAlias": "net5.0",
           "imports": [
             "net461",
             "net462",
@@ -56,6 +60,16 @@
           },
           "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.102\\RuntimeIdentifierGraph.json"
         }
+      }
+    },
+    "D:\\Books\\Document\\Google disk\\Work\\Programming\\C#\\Текущие проекты\\1. ControlAnalizing\\WorkWithChart\\WorkWithChart.csproj": {
+      "restore": {
+        "projectUniqueName": "D:\\Books\\Document\\Google disk\\Work\\Programming\\C#\\Текущие проекты\\1. ControlAnalizing\\WorkWithChart\\WorkWithChart.csproj",
+        "projectName": "WorkWithChart",
+        "projectPath": "D:\\Books\\Document\\Google disk\\Work\\Programming\\C#\\Текущие проекты\\1. ControlAnalizing\\WorkWithChart\\WorkWithChart.csproj"
+      },
+      "frameworks": {
+        "net48": {}
       }
     }
   }

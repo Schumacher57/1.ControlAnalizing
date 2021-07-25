@@ -4,6 +4,7 @@ using System;
 //using OxyPlot.Series;
 using System.Diagnostics;
 using WorkWithChart.ChartOperation;
+using WorkWithChart.FileOperation;
 using WorkWithChart.MyControl;
 using System.Windows.Forms.DataVisualization.Charting;
 
@@ -21,22 +22,31 @@ namespace WorkWithChart
         {
 
             InitializeComponent();
+            ChartArea myCrtAr = new ChartArea();
+            Chart mych = new Chart();
+            
+            mych.ChartAreas.Add(myCrtAr);
+
+            mainChart mainChart1 = new mainChart(); // Вариант с MS Chart
+            myZedGraph mainZed = new myZedGraph();  // Вариант с ZedGraph
 
 
-            mainChart mainChart1 = new mainChart();
-            //var mainChart2 = new PlotModel();
+            //tableLayoutPanel1.Controls.Add(mainChart1, 0, 1); // Добавляем MS Chart
+            tableLayoutPanel1.Controls.Add(mainZed, 0, 1); // Добавляем ZedGraph
 
-            tableLayoutPanel1.Controls.Add(mainChart1, 0, 1);
-            //ChartControl ChrtOrt = new ChartControl();
-
-
-            button1.Click += (s, a) => { ChartControl.UpdDataFromFile(mainChart1); };
+            button1.Click += (s, a) => {new FileOperation.FileType().ReadFile(@"d:\Books\Document\Google disk\Work\Programming\C#\Текущие проекты\1. ControlAnalizing\DataResource\Measure\+ data_30-6000_El_!SMA!.txt"); };
+            //button1.Click += (s, a) => { ChartControl.UpdDataFromFile(mainChart1); };
             textBox1.Text = "837,57";
             textBox1.KeyDown += (s, a) => { if (a.KeyCode == Keys.Enter) testZoomChart3(double.Parse(textBox1.Text), mainChart1); };
             button2.Click += (s, a) => { testZoomChart3(double.Parse(textBox1.Text), mainChart1); };
-
+            
 
         }
+
+
+     
+
+
 
         private void testZoomChart3(double SetMousePosition, Chart someChart)
         {
@@ -141,8 +151,6 @@ namespace WorkWithChart
 
 
         }
-
-
         private void funcUpdZooom(Axis slAxis, double xStart, double xStop)
         {
             slAxis.ScaleView.Zoom(xStart, xStop);
