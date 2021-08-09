@@ -9,3 +9,14 @@ D:\Books\Document\Google disk\Work\Programming\C#\Текущие проекты\
 D:\Books\Document\Google disk\Work\Programming\C#\Текущие проекты\1. ControlAnalizing\TableLayoutWithListCharts\obj\Debug\TableLayoutWithListCharts.pdb
 D:\Books\Document\Google disk\Work\Programming\C#\Текущие проекты\1. ControlAnalizing\TableLayoutWithListCharts\obj\Debug\TableLayoutWithListCharts.Form1.resources
 D:\Books\Document\Google disk\Work\Programming\C#\Текущие проекты\1. ControlAnalizing\TableLayoutWithListCharts\obj\Debug\TableLayoutWithListCharts.MyControls.ListFormMesure.resources
+d:\Books\Document\Google disk\Work\Programming\C#\Текущие проекты\1.ControlAnalizing\TableLayoutWithListCharts\bin\Debug\TableLayoutWithListCharts.exe.config
+d:\Books\Document\Google disk\Work\Programming\C#\Текущие проекты\1.ControlAnalizing\TableLayoutWithListCharts\bin\Debug\TableLayoutWithListCharts.exe
+d:\Books\Document\Google disk\Work\Programming\C#\Текущие проекты\1.ControlAnalizing\TableLayoutWithListCharts\bin\Debug\TableLayoutWithListCharts.pdb
+d:\Books\Document\Google disk\Work\Programming\C#\Текущие проекты\1.ControlAnalizing\TableLayoutWithListCharts\obj\Debug\TableLayoutWithListCharts.csprojAssemblyReference.cache
+d:\Books\Document\Google disk\Work\Programming\C#\Текущие проекты\1.ControlAnalizing\TableLayoutWithListCharts\obj\Debug\TableLayoutWithListCharts.Form1.resources
+d:\Books\Document\Google disk\Work\Programming\C#\Текущие проекты\1.ControlAnalizing\TableLayoutWithListCharts\obj\Debug\TableLayoutWithListCharts.MyControls.ListFormMesure.resources
+d:\Books\Document\Google disk\Work\Programming\C#\Текущие проекты\1.ControlAnalizing\TableLayoutWithListCharts\obj\Debug\TableLayoutWithListCharts.Properties.Resources.resources
+d:\Books\Document\Google disk\Work\Programming\C#\Текущие проекты\1.ControlAnalizing\TableLayoutWithListCharts\obj\Debug\TableLayoutWithListCharts.csproj.GenerateResource.cache
+d:\Books\Document\Google disk\Work\Programming\C#\Текущие проекты\1.ControlAnalizing\TableLayoutWithListCharts\obj\Debug\TableLayoutWithListCharts.csproj.CoreCompileInputs.cache
+d:\Books\Document\Google disk\Work\Programming\C#\Текущие проекты\1.ControlAnalizing\TableLayoutWithListCharts\obj\Debug\TableLayoutWithListCharts.exe
+d:\Books\Document\Google disk\Work\Programming\C#\Текущие проекты\1.ControlAnalizing\TableLayoutWithListCharts\obj\Debug\TableLayoutWithListCharts.pdb

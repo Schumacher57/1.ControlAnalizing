@@ -14,6 +14,7 @@ namespace TableLayoutWithListCharts.MyControls
         private bool showOnChart = false;
         private bool activeOnChart = false;
         private TextBoxNameMesure tmpTextBoxMeasure = new TextBoxNameMesure();
+
         // Автосвойства элемента показа графиков
         public string NameMeasure { get => nameMeasure; set => nameMeasure = value; }
         public bool ShowOnChart { get => showOnChart; set => showOnChart = value; }
@@ -82,7 +83,7 @@ namespace TableLayoutWithListCharts.MyControls
                 }
                 if (someCont is TextBoxNameMesure)
                 {
-                    someCont.Width = (int)(this.Width * 0.9)-5;
+                    someCont.Width = (int)(this.Width * 0.9) - 5;
                 }
             }
         }
@@ -117,6 +118,7 @@ namespace TableLayoutWithListCharts.MyControls
             this.Cursor = Cursors.Hand;
             this.Margin = new Padding(0);
             this.ReadOnly = true;
+            this.Font = new System.Drawing.Font("Arial", 8.5f, System.Drawing.FontStyle.Bold);
             //MouseClickButton += TextBoxNameMesure_MouseClick;
             //MouseClickButton += TextBoxNameMesure_MouseClick;
 

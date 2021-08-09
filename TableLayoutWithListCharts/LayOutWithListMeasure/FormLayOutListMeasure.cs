@@ -42,7 +42,7 @@ namespace TableLayoutWithListCharts.LayOutWithListMeasure
             measureListControls = new List<MyControls.ListFormMesure>();
             layoutConfiguration(); // Настраиваем по-умолчание LayOut панель
             toolStripConfiguration();   // Настраиваем toolStrip панель с кнопками
-            //layOutControl.Controls.Add(toolStripButtons); // Добавляем панель ToolStrip панель на LayOut панель
+
             panelWithButtonsConfiguration();
             PanelWithButtons.Controls.Add(toolStripButtons); // Добавляем панель ToolStrip панель на LayOut панель
             panelWithButtons.Controls.Add(layOutControl);
@@ -60,58 +60,58 @@ namespace TableLayoutWithListCharts.LayOutWithListMeasure
             layOutControl.Padding = new Padding(0, 5, 0, 0); // Убираем отступы внутри ячейки
             layOutControl.Margin = new Padding(0, 5, 0, 0); // Убираем отступы внутри ячейки
             layOutControl.RowCount++; // Добавляем строку для кнопок (добавить, удалить, сохранить список)
-            layOutControl.RowStyles.Add(new RowStyle(SizeType.Absolute, 19f)); // Присваиваем высоту по умолчанию
-            layOutControl.AutoScroll = true;
-            layOutControl.DisableHorizontalScrollBar();
-
-            /* добавляем ешё одну строку, пока для "красивого" отображения в режиме теста */
-            layOutControl.RowCount++; // Добавляем строку для кнопок (добавить, удалить, сохранить список)
             layOutControl.RowStyles.Add(new RowStyle(SizeType.Absolute, 20f)); // Присваиваем высоту по умолчанию
-
+            layOutControl.AutoScroll = true; // Включаем Scroll
+            layOutControl.DisableHorizontalScrollBar(); // Отключаем горизонтальный скролл с помощью метода расширения
 
         }
 
 
-
+        // Создаём панель (для родительского TableLayOut'а)
         private void panelWithButtonsConfiguration()
         {
-            PanelWithButtons.Height = 19;
-            PanelWithButtons.BorderStyle = BorderStyle.None;
-            PanelWithButtons.Padding = new Padding(0);
-            PanelWithButtons.Margin = new Padding(0);
-            PanelWithButtons.Dock = DockStyle.Fill;
-
+            PanelWithButtons.Height = 19; // Ставим высоту панели с кнопками
+            PanelWithButtons.BorderStyle = BorderStyle.None; // Убираем границу для панели
+            PanelWithButtons.Padding = new Padding(0); // Убираем отступы для панели
+            PanelWithButtons.Margin = new Padding(0); // Убираем отступы для панели
+            PanelWithButtons.Dock = DockStyle.Fill; // Заливаем панель во всю строку родительской TableLayOut панели
         }
 
         // Метод добавления змерения шума или сигнала в список
         private void addMeasure()
         {
             measureListControls.Add(new MyControls.ListFormMesure($"Изм. №{measureListControls.Count.ToString()}"));
-
-            for (int i = layOutControl.RowCount; i > 2; i--)
+            
+            
+            // Удаляем все строки.
+            for (int i = layOutControl.RowCount; i > 0; i--)
             {
+                layOutControl.Controls.Clear();
+                layOutControl.RowStyles.Clear();
                 layOutControl.RowCount--;
             }
+
+            layOutControl.RowCount += 2;
+
+            // Добавляем строки
             for (int i = 0; i <= measureListControls.Count - 1; i++)
             {
+
                 layOutControl.RowCount++;
                 layOutControl.RowStyles.Add(new RowStyle(SizeType.Absolute, 20f));
                 layOutControl.Controls.Add(measureListControls[i], 0, layOutControl.RowCount - 2);
-                //Debug.WriteLine($"LayOut hVisible: { layOutControl.VerticalScroll.Visible.ToString()}");
 
             }
         }
 
-        //Удаление измерения
+        // Метод удаления измерения из списка измерений
         private void delMeasure()
         {
-            
+
             if (measureListControls.Count > 0)
             {
                 Debug.WriteLine("Сработало удаление");
                 measureListControls.RemoveAt(0);
-                //layOutControl.RowCount--;
-                //layOutControl.RowStyles[layOutControl.RowCount] = new RowStyle(SizeType.Absolute, 20f);
             }
             for (int i = layOutControl.RowCount; i > 2; i--)
             {
@@ -139,6 +139,9 @@ namespace TableLayoutWithListCharts.LayOutWithListMeasure
             toolStripButtons.AutoSize = false;
             toolStripButtons.Padding = new Padding(0);
             toolStripButtons.Margin = new Padding(0);
+            /*toolStripButtons.AutoSize = true;
+            toolStripButtons.CanOverflow = true;*/
+
 
             /* Конфигурируем и добавляем кнопки на toolStrip*/
             configurationButtonAddMeasure();
@@ -162,6 +165,8 @@ namespace TableLayoutWithListCharts.LayOutWithListMeasure
             toolStripButtons.Items.Add(buttonChartFilterMeasure);
             toolStripButtons.Items.Add(new ToolStripSeparator());
             toolStripButtons.Items.Add(buttonLookMeasure);
+            /*toolStripButtons.Items.Add(new ToolStripSeparator());
+            toolStripButtons.Items.Add(buttonSaveMeasure);*/
 
             buttonAddMeasure.Click += (s, e) => { addMeasure(); };
             buttonDelMeasure.Click += (s, e) => { delMeasure(); };
@@ -245,7 +250,7 @@ namespace TableLayoutWithListCharts.LayOutWithListMeasure
 
 
 }
-
+// Метод расширения который помогает отключить вертикальную прокрутку в TableLayout панели
 public static class DisableScroll
 {
     static MethodInfo funcSetVisibleScrollbars;
