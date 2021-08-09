@@ -1,8 +1,7 @@
 ﻿using System;
 using System.Diagnostics;
-using System.Data;
 
-using ForTests.EM;
+using WorkWithChart.MyDataType;
 //using ForTests.myLib;
 //using ForTests.mySome2;
 //using ForTests.MyDataSet;
@@ -29,8 +28,11 @@ namespace ForTests
         
         void SomeDo5 ()
         {
-            EMfield EMf1 = new EMfield();
-            EMf1.Measure.GetMeasureFromFile(@"d:\Books\Document\Google disk\Work\Programming\C#\Текущие проекты\1. ControlAnalizing\DataResource\Measure\+ data_30-6000_El.txt");
+            /*EMfield EMf1 = new EMfield();
+            //EMf1.
+            EMf1.Measure.GetMeasureFromFile(@"d:\Books\Document\Google disk\Work\Programming\C#\Текущие проекты\1. ControlAnalizing\DataResource\Measure\TestData2.txt");
+            EMf1.Measure[0].InfoToConsole();*/
+
             //EMf1.Measure.GetMeasureFromFile()
 
         }

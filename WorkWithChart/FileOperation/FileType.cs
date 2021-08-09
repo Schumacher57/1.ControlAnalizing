@@ -11,15 +11,15 @@ namespace WorkWithChart.FileOperation
     public class FileType
     {
         //  /* Приватные поля класса, для свойств класса*/
-        private string pAddressFile; // Хранит адрес файла, если он установлено
+        private string pFileAddress; // Хранит адрес файла, если он установлено
         private string pFileName; // Хранит имя файла, если оно установлено
-        private string fullAddress; // Хранит полный путь к файлу если возмодно его создать (задан адрес и имя)
+        private string pFullAddress; // Хранит полный путь к файлу если возмодно его создать (задан адрес и имя)
 
-        //  /* Свойства класса*/
+        // /* ———————————— Свойства класса ———————————— */
         // Получаем адрес файла
         public string FileAddress
         {
-            get => pAddressFile;
+            get => pFileAddress;
             set
             {
                 // Проверяем есть ли слеш в конце, для получения корректного адреса
@@ -27,7 +27,7 @@ namespace WorkWithChart.FileOperation
                 {
                     value += "\\";
                 }
-                pAddressFile = value;
+                pFileAddress = value;
                 crtFullAddress();
             }
         }
@@ -42,21 +42,33 @@ namespace WorkWithChart.FileOperation
             }
         }
         // Свойство c полным адресом
-        public string FullAdress { get => fullAddress; set => fullAddress = value; }
+        public string FullAdress
+        {
+            get => pFullAddress;
+            set
+            {
+                if (Directory.Exists(value) || File.Exists(value))
+                {
+                    pFullAddress = value;
+                    pFileAddress = Path.GetDirectoryName(pFullAddress) + "\\";
+                    FileName = Path.GetFileName(pFullAddress);
+                }
+            }
+        }
 
 
         // /* ———————————— Методы класса ———————————— */
         // Считываем данные из файла
         public List<string> ReadFile()
         {
-            if (File.Exists(fullAddress))
+            if (File.Exists(pFullAddress))
             {
                 List<string> tmpList = new List<string>();
                 // Проубем считать данные из файла, даже если он уже открыт
                 try
                 {
                     // Создание процесса открытия файла, только для чтения
-                    var flStrem = new FileStream(fullAddress, FileMode.Open, FileAccess.Read, FileShare.ReadWrite);
+                    var flStrem = new FileStream(pFullAddress, FileMode.Open, FileAccess.Read, FileShare.ReadWrite);
 
                     // Читаем файл.
                     using (var myFile = new StreamReader(flStrem))
@@ -87,7 +99,7 @@ namespace WorkWithChart.FileOperation
         // Получаем данные из файла, если параметр был передан в конструктор.
         public List<string> ReadFile(string fullAddress)
         {
-            this.fullAddress = fullAddress;
+            this.pFullAddress = fullAddress;
             return ReadFile();
         }
 
@@ -101,9 +113,9 @@ namespace WorkWithChart.FileOperation
         // Получаем полное имя. Если адрес и имя были переданы по отдельности
         private void crtFullAddress()
         {
-            if (FileAddress != null && FileName != null)
+            if (FileAddress != null && FileName != null && FullAdress != "")
             {
-                fullAddress = FileAddress + FileName;
+                pFullAddress = FileAddress + FileName;
             }
         } // Создаём полный путь к файлу
 

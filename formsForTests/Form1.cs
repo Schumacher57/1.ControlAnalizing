@@ -19,7 +19,7 @@ namespace formsForTests
                 //tableLayoutPanel1.Controls.Add(myNewWwtich, 0, 0);
                 host myTwoForm = new host();
                 myTwoForm.someVal = "Передаю значение!";
-                myTwoForm.Show();
+                myTwoForm.ShowDialog();
             };
 
 
