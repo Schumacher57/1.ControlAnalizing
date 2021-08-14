@@ -31,11 +31,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "d:\\Books\\Document\\Google disk\\Work\\Programming\\C#\\Текущие проекты\\1.ControlAnalizing\\ForTests\\ForTestsConsole.csproj",
+      "projectUniqueName": "D:\\Books\\Document\\Google disk\\Work\\Programming\\C#\\Текущие проекты\\1.ControlAnalizing\\ForTests\\ForTestsConsole.csproj",
       "projectName": "ForTestsConsole",
-      "projectPath": "d:\\Books\\Document\\Google disk\\Work\\Programming\\C#\\Текущие проекты\\1.ControlAnalizing\\ForTests\\ForTestsConsole.csproj",
+      "projectPath": "D:\\Books\\Document\\Google disk\\Work\\Programming\\C#\\Текущие проекты\\1.ControlAnalizing\\ForTests\\ForTestsConsole.csproj",
       "packagesPath": "C:\\Users\\ivanchenko\\.nuget\\packages\\",
-      "outputPath": "d:\\Books\\Document\\Google disk\\Work\\Programming\\C#\\Текущие проекты\\1.ControlAnalizing\\ForTests\\obj\\",
+      "outputPath": "D:\\Books\\Document\\Google disk\\Work\\Programming\\C#\\Текущие проекты\\1.ControlAnalizing\\ForTests\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\ivanchenko\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -52,8 +52,8 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "d:\\Books\\Document\\Google disk\\Work\\Programming\\C#\\Текущие проекты\\1.ControlAnalizing\\WorkWithChart\\WorkWithChart.csproj": {
-              "projectPath": "d:\\Books\\Document\\Google disk\\Work\\Programming\\C#\\Текущие проекты\\1.ControlAnalizing\\WorkWithChart\\WorkWithChart.csproj"
+            "D:\\Books\\Document\\Google disk\\Work\\Programming\\C#\\Текущие проекты\\1.ControlAnalizing\\WorkWithChart\\WorkWithChart.csproj": {
+              "projectPath": "D:\\Books\\Document\\Google disk\\Work\\Programming\\C#\\Текущие проекты\\1.ControlAnalizing\\WorkWithChart\\WorkWithChart.csproj"
             }
           }
         }

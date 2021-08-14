@@ -53,6 +53,9 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="LayOutWithListMeasure\FormLayOutListMeasure.cs" />
+    <Compile Include="MyControls\ButtonsPanelforMeasures.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="MyControls\ListFormMesure.cs">
       <SubType>UserControl</SubType>
     </Compile>

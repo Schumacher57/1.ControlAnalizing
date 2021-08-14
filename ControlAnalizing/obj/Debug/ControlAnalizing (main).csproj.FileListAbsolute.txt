@@ -6,3 +6,12 @@ D:\Books\Document\Google disk\Work\Programming\C#\Текущие проекты\
 D:\Books\Document\Google disk\Work\Programming\C#\Текущие проекты\1. ControlAnalizing\ControlAnalizing\obj\Debug\ControlAnalizing (main).csproj.CoreCompileInputs.cache
 D:\Books\Document\Google disk\Work\Programming\C#\Текущие проекты\1. ControlAnalizing\ControlAnalizing\obj\Debug\ControlAnalizing.exe
 D:\Books\Document\Google disk\Work\Programming\C#\Текущие проекты\1. ControlAnalizing\ControlAnalizing\obj\Debug\ControlAnalizing.pdb
+D:\Books\Document\Google disk\Work\Programming\C#\Текущие проекты\1.ControlAnalizing\ControlAnalizing\bin\Debug\ControlAnalizing.exe.config
+D:\Books\Document\Google disk\Work\Programming\C#\Текущие проекты\1.ControlAnalizing\ControlAnalizing\bin\Debug\ControlAnalizing.exe
+D:\Books\Document\Google disk\Work\Programming\C#\Текущие проекты\1.ControlAnalizing\ControlAnalizing\bin\Debug\ControlAnalizing.pdb
+D:\Books\Document\Google disk\Work\Programming\C#\Текущие проекты\1.ControlAnalizing\ControlAnalizing\obj\Debug\ControlAnalizing (main).csprojAssemblyReference.cache
+D:\Books\Document\Google disk\Work\Programming\C#\Текущие проекты\1.ControlAnalizing\ControlAnalizing\obj\Debug\ControlAnalizing.Properties.Resources.resources
+D:\Books\Document\Google disk\Work\Programming\C#\Текущие проекты\1.ControlAnalizing\ControlAnalizing\obj\Debug\ControlAnalizing (main).csproj.GenerateResource.cache
+D:\Books\Document\Google disk\Work\Programming\C#\Текущие проекты\1.ControlAnalizing\ControlAnalizing\obj\Debug\ControlAnalizing (main).csproj.CoreCompileInputs.cache
+D:\Books\Document\Google disk\Work\Programming\C#\Текущие проекты\1.ControlAnalizing\ControlAnalizing\obj\Debug\ControlAnalizing.exe
+D:\Books\Document\Google disk\Work\Programming\C#\Текущие проекты\1.ControlAnalizing\ControlAnalizing\obj\Debug\ControlAnalizing.pdb
