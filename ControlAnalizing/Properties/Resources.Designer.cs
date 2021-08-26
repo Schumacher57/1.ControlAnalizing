@@ -63,9 +63,39 @@ namespace ControlAnalizing.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap AddMeasure {
+            get {
+                object obj = ResourceManager.GetObject("AddMeasure", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Chart {
             get {
                 object obj = ResourceManager.GetObject("Chart", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ChartFilter4 {
+            get {
+                object obj = ResourceManager.GetObject("ChartFilter4", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap DelMeasure {
+            get {
+                object obj = ResourceManager.GetObject("DelMeasure", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -103,6 +133,26 @@ namespace ControlAnalizing.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Hide_show {
+            get {
+                object obj = ResourceManager.GetObject("Hide_show", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap LookData2 {
+            get {
+                object obj = ResourceManager.GetObject("LookData2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap SaveSignal {
             get {
                 object obj = ResourceManager.GetObject("SaveSignal", resourceCulture);
@@ -116,6 +166,16 @@ namespace ControlAnalizing.Properties {
         internal static System.Drawing.Bitmap SaveSignal1 {
             get {
                 object obj = ResourceManager.GetObject("SaveSignal1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap SelectMeasure {
+            get {
+                object obj = ResourceManager.GetObject("SelectMeasure", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

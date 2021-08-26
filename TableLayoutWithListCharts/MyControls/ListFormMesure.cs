@@ -119,8 +119,8 @@ namespace TableLayoutWithListCharts.MyControls
             this.Margin = new Padding(0);
             this.ReadOnly = true;
             this.Font = new System.Drawing.Font("Arial", 8.5f, System.Drawing.FontStyle.Bold);
-            //MouseClickButton += TextBoxNameMesure_MouseClick;
-            //MouseClickButton += TextBoxNameMesure_MouseClick;
+            // MouseClickButton += TextBoxNameMesure_MouseClick;
+            // MouseClickButton += TextBoxNameMesure_MouseClick;
 
             this.MouseClick += TextBoxNameMesure_MouseClick;
             this.MouseDoubleClick += TextBoxNameMesure_MouseDoubleClick; // Событие двойного клика по мышке

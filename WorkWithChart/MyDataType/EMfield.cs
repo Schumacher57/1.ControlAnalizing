@@ -153,7 +153,7 @@ namespace WorkWithChart.MyDataType
             //return null;
         }
 
-        //TODO: Метод добавления частоты и сигнала
+        //Метод добавления частоты и сигнала
         public void AddData(double Freq, double Sig)
         {
             pMesureDT.Rows.Add(new object[] { null, Freq, Sig });

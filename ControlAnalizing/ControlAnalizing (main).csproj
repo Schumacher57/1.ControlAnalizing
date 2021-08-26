@@ -63,9 +63,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controls\layOutList\DataEMFTableLayOutList.cs" />
+    <Compile Include="Controls\layOutList\DataEMButton.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\layOutList\DataEMButton.Designer.cs">
+      <DependentUpon>DataEMButton.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\layOutList\ToolStripBtnsForList.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\layOutList\PanelListMeasure.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Controls\UpMenuStrip\UpMenuStrip.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="DataEMF\EMField.cs" />
+    <Compile Include="DataEMF\Enums\Choice.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -74,6 +89,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Controls\layOutList\DataEMButton.resx">
+      <DependentUpon>DataEMButton.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
@@ -126,6 +144,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\MainToolStripMenu\DownLoadSignal.png" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\DataEMButton\Hide_show.png" />
+    <None Include="Resources\ButtonsListMeasure\LookData2.png" />
+    <None Include="Resources\ButtonsListMeasure\DelMeasure.png" />
+    <None Include="Resources\ButtonsListMeasure\AddMeasure.png" />
+    <Content Include="Resources\ButtonsListMeasure\ChartFilter4.png" />
+    <None Include="Resources\ButtonsListMeasure\SelectMeasure.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

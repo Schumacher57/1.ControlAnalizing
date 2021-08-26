@@ -31,7 +31,7 @@ namespace TableLayoutWithListCharts
             tableLayoutPanel3.Controls.Add(new LayOutWithListMeasure.FormLayOutListMeasure().PanelWithButtons, 0, 1);
 
             //tableLayoutPanel3.Controls.Add(new LayOutWithListMeasure.FormLayOutListMeasure().LayOutControl, 0, 1);
-
+            button1.Click += (s, e) => { tableLayoutPanel5.Visible = true; };
 
             //crtColumnButton(dataGridView1);
             //addRowToTableLayout();
@@ -72,7 +72,7 @@ namespace TableLayoutWithListCharts
                 MyControls.ListFormMesure tmpListFormMesure = new MyControls.ListFormMesure($"Сиг. № {i}");
                 myControl.Add(new MyControls.ListFormMesure($"Сиг. № {i}"));
                 myControl[myControl.Count - 1].TextBoxClicked += (s, e) => { textBoxesClicked?.Invoke(this, e); };
-                
+
                 tableLayoutPanel2.Controls.Add(myControl[myControl.Count - 1], 0, i);
                 tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Absolute, 20f));
                 tableLayoutPanel2.RowCount += 1;

@@ -25,3 +25,30 @@ D:\Books\Document\Google disk\Work\Programming\C#\Текущие проекты\
 D:\Books\Document\Google disk\Work\Programming\C#\Текущие проекты\1. ControlAnalizing\WorkWithChart\bin\Debug\zh-cn\ZedGraph.resources.dll
 D:\Books\Document\Google disk\Work\Programming\C#\Текущие проекты\1. ControlAnalizing\WorkWithChart\bin\Debug\zh-tw\ZedGraph.resources.dll
 D:\Books\Document\Google disk\Work\Programming\C#\Текущие проекты\1. ControlAnalizing\WorkWithChart\obj\Debug\WorkWithChart.MyControl.myZedGraph.resources
+D:\Books\Document\Google disk\Work\Programming\C#\Текущие проекты\1.ControlAnalizing\WorkWithChart\bin\Debug\WorkWithChart.exe.config
+D:\Books\Document\Google disk\Work\Programming\C#\Текущие проекты\1.ControlAnalizing\WorkWithChart\bin\Debug\WorkWithChart.exe
+D:\Books\Document\Google disk\Work\Programming\C#\Текущие проекты\1.ControlAnalizing\WorkWithChart\bin\Debug\WorkWithChart.pdb
+D:\Books\Document\Google disk\Work\Programming\C#\Текущие проекты\1.ControlAnalizing\WorkWithChart\bin\Debug\ZedGraph.dll
+D:\Books\Document\Google disk\Work\Programming\C#\Текущие проекты\1.ControlAnalizing\WorkWithChart\bin\Debug\ZedGraph.xml
+D:\Books\Document\Google disk\Work\Programming\C#\Текущие проекты\1.ControlAnalizing\WorkWithChart\bin\Debug\de\ZedGraph.resources.dll
+D:\Books\Document\Google disk\Work\Programming\C#\Текущие проекты\1.ControlAnalizing\WorkWithChart\bin\Debug\es\ZedGraph.resources.dll
+D:\Books\Document\Google disk\Work\Programming\C#\Текущие проекты\1.ControlAnalizing\WorkWithChart\bin\Debug\fr\ZedGraph.resources.dll
+D:\Books\Document\Google disk\Work\Programming\C#\Текущие проекты\1.ControlAnalizing\WorkWithChart\bin\Debug\hu\ZedGraph.resources.dll
+D:\Books\Document\Google disk\Work\Programming\C#\Текущие проекты\1.ControlAnalizing\WorkWithChart\bin\Debug\it\ZedGraph.resources.dll
+D:\Books\Document\Google disk\Work\Programming\C#\Текущие проекты\1.ControlAnalizing\WorkWithChart\bin\Debug\ja\ZedGraph.resources.dll
+D:\Books\Document\Google disk\Work\Programming\C#\Текущие проекты\1.ControlAnalizing\WorkWithChart\bin\Debug\pt\ZedGraph.resources.dll
+D:\Books\Document\Google disk\Work\Programming\C#\Текущие проекты\1.ControlAnalizing\WorkWithChart\bin\Debug\ru\ZedGraph.resources.dll
+D:\Books\Document\Google disk\Work\Programming\C#\Текущие проекты\1.ControlAnalizing\WorkWithChart\bin\Debug\sk\ZedGraph.resources.dll
+D:\Books\Document\Google disk\Work\Programming\C#\Текущие проекты\1.ControlAnalizing\WorkWithChart\bin\Debug\sv\ZedGraph.resources.dll
+D:\Books\Document\Google disk\Work\Programming\C#\Текущие проекты\1.ControlAnalizing\WorkWithChart\bin\Debug\tr\ZedGraph.resources.dll
+D:\Books\Document\Google disk\Work\Programming\C#\Текущие проекты\1.ControlAnalizing\WorkWithChart\bin\Debug\zh-cn\ZedGraph.resources.dll
+D:\Books\Document\Google disk\Work\Programming\C#\Текущие проекты\1.ControlAnalizing\WorkWithChart\bin\Debug\zh-tw\ZedGraph.resources.dll
+D:\Books\Document\Google disk\Work\Programming\C#\Текущие проекты\1.ControlAnalizing\WorkWithChart\obj\Debug\WorkWithChart.csprojAssemblyReference.cache
+D:\Books\Document\Google disk\Work\Programming\C#\Текущие проекты\1.ControlAnalizing\WorkWithChart\obj\Debug\WorkWithChart.Form1.resources
+D:\Books\Document\Google disk\Work\Programming\C#\Текущие проекты\1.ControlAnalizing\WorkWithChart\obj\Debug\WorkWithChart.MyControl.myZedGraph.resources
+D:\Books\Document\Google disk\Work\Programming\C#\Текущие проекты\1.ControlAnalizing\WorkWithChart\obj\Debug\WorkWithChart.Properties.Resources.resources
+D:\Books\Document\Google disk\Work\Programming\C#\Текущие проекты\1.ControlAnalizing\WorkWithChart\obj\Debug\WorkWithChart.csproj.GenerateResource.cache
+D:\Books\Document\Google disk\Work\Programming\C#\Текущие проекты\1.ControlAnalizing\WorkWithChart\obj\Debug\WorkWithChart.csproj.CoreCompileInputs.cache
+D:\Books\Document\Google disk\Work\Programming\C#\Текущие проекты\1.ControlAnalizing\WorkWithChart\obj\Debug\WorkWithChart.csproj.CopyComplete
+D:\Books\Document\Google disk\Work\Programming\C#\Текущие проекты\1.ControlAnalizing\WorkWithChart\obj\Debug\WorkWithChart.exe
+D:\Books\Document\Google disk\Work\Programming\C#\Текущие проекты\1.ControlAnalizing\WorkWithChart\obj\Debug\WorkWithChart.pdb

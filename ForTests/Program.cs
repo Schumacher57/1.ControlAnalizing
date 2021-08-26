@@ -1,10 +1,5 @@
 ﻿using System;
-using System.Diagnostics;
-
-using WorkWithChart.MyDataType;
-//using ForTests.myLib;
-//using ForTests.mySome2;
-//using ForTests.MyDataSet;
+using ForTestsConsole.TestClass2;
 
 
 namespace ForTests
@@ -16,148 +11,83 @@ namespace ForTests
             Program myPrg = new Program();
 
             /* Тут вызывать методы для теста*/
-            myPrg.SomeDo5();
+            myPrg.testMethod3();
 
 
-            /*Ниже уже писать свои методы для теста*/
 
-
+            // ——— /*Конец выполнения тестовых методов*/ ——— 
+            Console.WriteLine("\n\n\n");
+            Console.WriteLine(new string('_', 50));
+            Console.WriteLine("Выполнение завершено.");
             Console.ReadKey();
         }
 
-        
-        void SomeDo5 ()
+
+
+        // Тестовый метод. Проверяем возможность связать свойства класса
+        void testMethod3()
         {
-            /*EMfield EMf1 = new EMfield();
-            //EMf1.
-            EMf1.Measure.GetMeasureFromFile(@"d:\Books\Document\Google disk\Work\Programming\C#\Текущие проекты\1. ControlAnalizing\DataResource\Measure\TestData2.txt");
-            EMf1.Measure[0].InfoToConsole();*/
+            MainClass mainTestClass = new MainClass();
+            TestClassB ClassB = new TestClassB();
+            ClassB.mainClassB = mainTestClass;
 
-            //EMf1.Measure.GetMeasureFromFile()
+            Console.WriteLine($"mainTestClass.ClassA.Name: {mainTestClass.ClassA.Name}");
+            mainTestClass.Name = "ReName in MainClass";
+            Console.WriteLine($"mainTestClass.ClassA.Name: {mainTestClass.ClassA.Name}");
+            mainTestClass.ClassA.Name = "ReName in ClassA";
+            Console.WriteLine($"mainTestClass.Name: {mainTestClass.Name}\n");
+            Console.WriteLine(new string('—', 50));
 
-        }
-        
-        
-        
-        void SomeDo4()
-        {
-            /*EMfield EMf1 = new EMfield();
-            Measure Mesure1 = new Measure();
-            EMf1.Measure[3] = Mesure1;*/
-
-            /*Mesure1 = EMf1.Measure.AddNew("Привет");
-            EMf1.Measure[0].SomeDo();
-            Mesure1.SomeDo();
-            EMf1.Measure[0].someText = "Привет2";
-            Console.WriteLine("После изменений:");
-            EMf1.Measure[0].SomeDo();
-            Mesure1.SomeDo();
-            Console.WriteLine("Добавили №2");
-            EMf1.Measure.AddNew();
-            EMf1.Measure[1].DispSome();*/
-            //EMf1.Measure = 
+            ClassB.mainClassB.Name = "ReName in ClassB";
+            Console.WriteLine($"mainTestClass.Name: {mainTestClass.Name}");
 
 
-
-
-
-            /*EMf1.Measure.AddNew(Mesure1);
-            EMf1.Measure.AddNew();
-            EMf1.Measure[0].SomeDo();
-            EMf1.Measure[1].SomeDo();*/
 
 
         }
 
-        void SomeDo3()
+        // Тестовый метод. Проверяем возможность связать свойства класса
+        void testMethod2()
         {
-            /*EMFiledEx myEMf = new EMFiledEx();
-            MeasureEx myMeasure = new MeasureEx("Столбец измерений");
-            DataTable myMeasureSort = new DataTable();
-            MeasureEx myMeasureSortEx;// = new DataTable();
-            DataView mySomeSort;
-            myEMf.Tables.Add(myMeasure);
-            myMeasure.Rows.Add(new object[] { null, 142.14, 27.89 });
-            myMeasure.Rows.Add(new object[] { null, 256.11, 27.1, 13.2 });
-            myMeasure.Rows.Add(new object[] { null, 200.11, 25.1, 17.2 });
-            mySomeSort = myMeasure.DefaultView;
-            mySomeSort.Sort = "Частота";
-            myMeasureSort = mySomeSort.ToTable();
-            myMeasureSortEx = new MeasureEx(myMeasureSort);
-            myMeasureSortEx.displInfo();*/
+            //MainClass mainClass = new MainClass();
+            //TestClassA classA = new TestClassA(mainClass);
+
+
+            // /* ——— Test#1 ——— */
+            //mainClass.iMain = 10;
+            //Console.WriteLine($"classA.i1 {classA.i1.ToString()}");
+            //classA.i1 = 20;
+            //Console.WriteLine($"mainClass.iMain {mainClass.iMain.ToString()}");
+
+
+        }
+
+        // Тестовый метод. Проверяем возможность связать свойства класса
+        void testMethod1()
+        {
+
+            //MainClass mainClass = new MainClass();
+            //var classA = new TestClassA();
+            //var classB = new TestClassB();
+
+            // /* ——— Test#1 ——— */
+            //mainClass.iMain = 4;
+            //classA.i1 = mainClass.iMain;
+            //mainClass.iMain = 5;
+
+            //Console.WriteLine($"classA.i1:\t{classA.i1.ToString()}");
+
+            // /* ——— Test#2 ——— */
+
+            //classA.i1 = 6;
+
+
+            //Console.WriteLine($"classA.i1: {classA.i1.ToString()}");
+            //Console.WriteLine($"classMain.iMain: {mainClass.iMain}");
 
 
         }
 
 
-        static void someDo2()
-        {
-
-            /*EMFiled myEMF = new EMFiled();*/
-            //myEMF.Measures.add
-
-            //Debug.WriteLine(myEM.Measures.Length.ToString());
-
-
-        }
-
-        // new 20.07.2021
-        static void SomeDo()
-        {
-            /*EMField myEMF = new EMField();
-            Measure myMeasur1 = new Measure();
-            Measure myMeasur2 = new Measure("New name");
-
-            myEMF.Measures.Add(myMeasur1);
-            myEMF.AddMeasure(myMeasur2);
-
-
-            Debug.WriteLine(myEMF.Measures[0].Name);
-            Debug.WriteLine(myEMF.Measures[1].Name);*/
-
-
-        }
-
-        // 20.07.2021
-        void oldTry2()
-        {
-            /*List<double> myTestList = new List<double>();
-
-            myLib.someClass mySomeData = new someClass();
-            mySomeData.DTFreq.Add(1.23);
-
-            mySomeData.AddData(3.24, 12);
-
-
-            myTestList.Add(3.24);
-            Debug.Print(myTestList[0].ToString());
-            myTestList[0] = 5.14;
-            Debug.Print(myTestList[0].ToString());
-            Debug.Print(myTestList.Count.ToString());
-            //mySomeData.s
-
-
-            Debug.Print(mySomeData.DTFreq[0].ToString());
-
-            Debug.Print(mySomeData.GetData(0).ToString());*/
-
-            //mySomeData
-
-            //mySomeData.addData(121, 39, 32);
-            //Debug.WriteLine(mySomeData.Data);
-
-        }
-
-        static void oldTry()
-        {
-            //string a = "123";
-            TraceListener myListen = new ConsoleTraceListener();
-            Trace.Listeners.Add(myListen);
-
-            //someClass myNewSomeClass = new someClass();
-            //myNewSomeClass.someString = "123";
-
-            Console.ReadKey();
-        }
     }
 }

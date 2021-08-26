@@ -11,8 +11,8 @@ namespace TableLayoutWithListCharts.LayOutWithListMeasure
     class FormLayOutListMeasure
     {
         private TableLayoutPanel layOutControl;
-        public Panel PanelWithButtons { get => panelWithButtons; }
 
+        public Panel PanelWithButtons { get => panelWithButtons; }
         private Panel panelWithButtons = new Panel();
 
         // Коллекция кнопок по управлению измерениями

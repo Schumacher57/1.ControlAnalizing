@@ -123,6 +123,7 @@ namespace ControlAnalizing.Controls.MainMenuStrip
             tmpInitialMenu.Dock = DockStyle.Fill;
             tmpInitialMenu.Padding = new Padding(0);
             tmpInitialMenu.Margin = new Padding(0);
+            tmpInitialMenu.DisplayStyle = ToolStripItemDisplayStyle.Text;
             return tmpInitialMenu;
         }
 
@@ -130,6 +131,7 @@ namespace ControlAnalizing.Controls.MainMenuStrip
         ToolStripMenuItem initialItemMenuStrip(string textOnMenu, Image imgMenu)
         {
             ToolStripMenuItem tmpInitialMenu = initialItemMenuStrip(textOnMenu);
+            tmpInitialMenu.DisplayStyle = ToolStripItemDisplayStyle.ImageAndText;
             tmpInitialMenu.Image = imgMenu;
             tmpInitialMenu.ImageAlign = ContentAlignment.MiddleCenter;
 
